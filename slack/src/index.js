@@ -4,9 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Login from './components/Auth/Login/Login.component';
+import Register from './components/Auth/Register/Register.component';
+
+import "semantic-ui-css/semantic.min.css";
+import { BrowserRouter as Router, Routes, Route, withRouter } from "react-router-dom";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Router>
+      <Routes>
+        <Route exact path='/' element={<App/>}/>
+        <Route exact path='/login' element={<Login/>}/>
+        <Route exact path='/register' element={<Register/>}/>
+      </Routes>
+    </Router>
     <App />
   </React.StrictMode>
 );
